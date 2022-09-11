@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/we_are_the_champions/static/css/main.1f63d0e3.css",
+    "main.js": "/we_are_the_champions/static/js/main.e7d10e3d.js",
+    "index.html": "/we_are_the_champions/index.html",
+    "main.1f63d0e3.css.map": "/we_are_the_champions/static/css/main.1f63d0e3.css.map",
+    "main.e7d10e3d.js.map": "/we_are_the_champions/static/js/main.e7d10e3d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1f63d0e3.css",
+    "static/js/main.e7d10e3d.js"
+  ]
+}
