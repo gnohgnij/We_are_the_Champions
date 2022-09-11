@@ -16,7 +16,7 @@ function App() {
    */
   useEffect(() => {
     const fetchData = async () => {
-      let res = await fetch("http://localhost:3000/api/team");
+      let res = await fetch("https://campeon.herokuapp.com/api/team");
       let json = await res.json();
       setGroup1(json.teams.filter((team) => parseInt(team.group) === 1));
       setGroup2(json.teams.filter((team) => parseInt(team.group) === 2));
@@ -51,7 +51,7 @@ function App() {
       allTeams.push(team);
     });
 
-    let res = await fetch("http://localhost:3000/api/team", {
+    let res = await fetch("https://campeon.herokuapp.com/api/team", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -91,7 +91,7 @@ function App() {
       allMatches.push(match);
     });
 
-    await fetch("http://localhost:3000/api/match", {
+    let res = await fetch("https://campeon.herokuapp.com/api/team/match", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -107,11 +107,7 @@ function App() {
    * Function to delete all records
    */
   const deleteAll = async () => {
-    await fetch("http://localhost:3000/api/match", {
-      method: "DELETE",
-    });
-
-    await fetch("http://localhost:3000/api/team", {
+    await fetch("https://campeon.herokuapp.com/api/team", {
       method: "DELETE",
     });
 

@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from "react";
 
+/**
+ * Compares teams based on points, total goals, alternate points and earliest registered date
+ * @param {team object} a
+ * @param {team object} b
+ * @returns higher ranked team
+ */
 const compare = (a, b) => {
   if (a.points < b.points) {
     return 1;
@@ -41,13 +47,13 @@ const Table = (props) => {
   let row = data.map((team, i) => {
     return (
       <tr key={i}>
-        <td>{i + 1}</td>
-        <td>{team.name}</td>
-        <td>{team.registeredDate}</td>
-        <td>{team.totalGoals ? team.totalGoals : 0}</td>
-        <td>{team.points ? team.points : 0}</td>
-        <td>{team.alternatePoints ? team.alternatePoints : 0}</td>
-        <td>{i + 1 <= 4 ? "Yes" : "No"}</td>
+        <td className="text-center">{i + 1}</td>
+        <td className="text-center">{team.name}</td>
+        <td className="text-center">{team.registeredDate}</td>
+        <td className="text-center">{team.totalGoals}</td>
+        <td className="text-center">{team.points}</td>
+        <td className="text-center">{team.alternatePoints}</td>
+        <td className="text-center">{i + 1 <= 4 ? "Yes" : "No"}</td>
       </tr>
     );
   });
@@ -56,16 +62,18 @@ const Table = (props) => {
     <>
       <h2 className="text-center text-2xl font-bold">{`Group ${props.group}`}</h2>
       <table className="table-auto">
-        <tr className="bg-slate-300">
-          <th>Rank</th>
-          <th>Team</th>
-          <th>Registration Date</th>
-          <th>Goals</th>
-          <th>Points</th>
-          <th>Alternate Points</th>
-          <th>Qualified?</th>
-        </tr>
-        {row}
+        <thead>
+          <tr className="bg-slate-300">
+            <th>Rank</th>
+            <th>Team</th>
+            <th>Registration Date</th>
+            <th>Goals</th>
+            <th>Points</th>
+            <th>Alternate Points</th>
+            <th>Qualified?</th>
+          </tr>
+        </thead>
+        <tbody>{row}</tbody>
       </table>
     </>
   );
