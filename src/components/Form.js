@@ -3,7 +3,7 @@ const Form = (props) => {
     <form className="mt-6" onSubmit={props.onSubmit}>
       <textarea
         className="outline outline-slate-500 rounded-md p-2 block w-full"
-        placeholder="Enter team information here"
+        placeholder={`Enter ${props.teamOrMatch} information here`}
         rows={5}
         value={props.value}
         onChange={props.onChange}

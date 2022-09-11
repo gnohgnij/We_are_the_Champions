@@ -1,7 +1,7 @@
 {
   "name": "we_are_the_champions",
   "version": "0.1.0",
-  "homepage": "https://gnohgnij.github.io/we_are_the_champions",
+  "homepage": "https://gnohgnij.github.io/We_are_the_Champions",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",

@@ -122,11 +122,13 @@ function App() {
           onChange={handleOnTeamChange}
           value={teams}
           onSubmit={handleOnTeamSubmit}
+          teamOrMatch={"team"}
         />
         <Form
           onChange={handleOnMatchChange}
           value={matches}
           onSubmit={handleOnMatchSubmit}
+          teamOrMatch={"match"}
         />
       </div>
       <div id="tables" className="grid grid-cols-1 mt-10">
