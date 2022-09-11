@@ -16,4 +16,6 @@ Click [here](https://github.com/gnohgnij/we_are_the_champions_back_end.git) to v
 
 2. Navigate to the repository directory `$ cd ../We_are_the_Champions`
 
-3. Run `npm start`
+3. In the directory _src/App.js_ , replace every instance of `https://campeon.herokuapp.com` with `http://localhost:8080`
+
+4. Run `npm start`
