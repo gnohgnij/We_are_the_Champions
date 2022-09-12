@@ -91,8 +91,8 @@ function App() {
       allMatches.push(match);
     });
 
-    let res = await fetch("https://campeon.herokuapp.com/api/team/match", {
-      method: "POST",
+    let res = await fetch("https://campeon.herokuapp.com/api/team", {
+      method: "PATCH",
       headers: {
         "Content-Type": "application/json",
       },
