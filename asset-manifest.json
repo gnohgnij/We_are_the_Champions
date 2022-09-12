@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/We_are_the_Champions/static/css/main.1f63d0e3.css",
-    "main.js": "/We_are_the_Champions/static/js/main.ea512bf7.js",
+    "main.js": "/We_are_the_Champions/static/js/main.f19857ce.js",
     "index.html": "/We_are_the_Champions/index.html",
     "main.1f63d0e3.css.map": "/We_are_the_Champions/static/css/main.1f63d0e3.css.map",
-    "main.ea512bf7.js.map": "/We_are_the_Champions/static/js/main.ea512bf7.js.map"
+    "main.f19857ce.js.map": "/We_are_the_Champions/static/js/main.f19857ce.js.map"
   },
   "entrypoints": [
     "static/css/main.1f63d0e3.css",
-    "static/js/main.ea512bf7.js"
+    "static/js/main.f19857ce.js"
   ]
 }
