@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import Form from "./components/Form";
 import Table from "./components/Table";
+import ErrorModal from "./components/ErrorModal";
 
 function App() {
   const [toggle, setToggle] = useState(false);
@@ -10,10 +11,15 @@ function App() {
   const [group2, setGroup2] = useState([]);
   const [teams, setTeams] = useState("");
   const [matches, setMatches] = useState("");
+  const [error, setError] = useState({
+    isError: false,
+    errorMsg: "",
+  });
 
   /**
    * Executes whenever there is a change in the team/match info
    */
+
   useEffect(() => {
     const fetchData = async () => {
       let res = await fetch("https://campeon.herokuapp.com/api/team");
@@ -59,8 +65,15 @@ function App() {
       body: JSON.stringify({ teams: allTeams }),
     });
 
-    setTeams("");
+    let json = await res.json();
+    if (json.status) {
+      setError({
+        isOpen: true,
+        errorMsg: json.reason,
+      });
+    }
     setToggle(!toggle);
+    setTeams("");
   };
 
   /**
@@ -99,24 +112,42 @@ function App() {
       body: JSON.stringify({ matches: allMatches }),
     });
 
-    setMatches("");
+    let json = await res.json();
+    if (json.status) {
+      setError({
+        isOpen: true,
+        errorMsg: json.reason,
+      });
+    }
     setToggle(!toggle);
+    setMatches("");
   };
 
   /**
    * Function to delete all records
    */
   const deleteAll = async () => {
-    await fetch("https://campeon.herokuapp.com/api/team", {
+    let res = await fetch("https://campeon.herokuapp.com/api/team", {
       method: "DELETE",
     });
 
+    let json = await res.json();
+    if (json.status) {
+      setError({
+        isOpen: true,
+        errorMsg: json.reason,
+      });
+    }
     setToggle(!toggle);
+    setTeams("");
   };
 
   return (
     <div className="p-8">
       <h1 className="font-bold text-4xl text-center">We are the Champions</h1>
+      {error.isOpen && (
+        <ErrorModal errorMsg={error.errorMsg} onClose={setError} />
+      )}
       <div id="forms" className="grid grid-cols-1">
         <Form
           onChange={handleOnTeamChange}
