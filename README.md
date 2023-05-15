@@ -31,4 +31,4 @@ If teams are still tied, earliest registration date.
 
 ## Test cases
 
-View the test cases [here](https://github.com/gnohgnij/We_are_the_Champions/test/testcases.txt).
+View the test cases [here](test/testcases.txt).
